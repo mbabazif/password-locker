@@ -1,10 +1,10 @@
 import unittest # Importing the unittest module
-from user import Account # Importing the Account class
+from user import User # Importing the Account class
 
-class TestAccount(unittest.TestCase):
+class TestUser(unittest.TestCase):
 
     '''
-    Test class that defines test cases for the Account class behaviours.
+    Test class that defines test cases for the user class behaviours.
 
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
@@ -15,7 +15,7 @@ class TestAccount(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = Account("Florence","Mbabazi","pswd12345",) # create contact object
+        self.new_user = User("Florence","Mbabazi","pswd12345",) # create user object
 
 
     def test_init(self):unitest
@@ -29,11 +29,11 @@ class TestAccount(unittest.TestCase):
 
     def test_save_user(self):
         '''
-        test_save_contact test case to test if the contact object is saved into
-         the contact list
+        test_save_user test case to test if the user object is saved into
+         the user list
         '''
-        self.new_user.save_contact() # saving the new contact
-        self.assertEqual(len(Account.user_list),1)
+        self.new_user.save_contact() # saving the new user
+        self.assertEqual(len(User.user_list),1)
     
 
 

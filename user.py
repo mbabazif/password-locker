@@ -1,9 +1,9 @@
-class Account:
+class User:
     """
-    Class that generates new instances of accounts.
+    Class that generates new instances of user.
     """
 
-    users_list = [] # Empty Account list
+    user_list = [] # Empty Account list
 
     def __init__(self,first_name,last_name,password):
 
@@ -14,7 +14,7 @@ class Account:
         self.password = password
     def save_user(self):
 		'''
-		 test_save_contact test case to test if the contact object is saved into
-         the contact list
+		 test_save_user test case to test if the contact object is saved into
+         the user list
 		'''
-		Account.users_list.append(self)    
+		User.users_list.append(self)    
