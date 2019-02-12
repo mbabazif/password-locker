@@ -1,11 +1,11 @@
 from user import User
 from credentials import Credentials
 
-def login_credentials(xusername,xpassword):
+def login_credentials(first_name,last_name,password):
     '''
     Function to create login credentials
     '''
-    new_credentials = credentials(xusername,xpassword)
+    new_credentials = credentials(first_name,last_name,password)
     return new_credentials
 def save_credentials(credentials):
      credentials.save_credentials()
