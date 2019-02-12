@@ -18,9 +18,11 @@ pyperclip
 
 In your terminal:
 
-$ git clone https://github.com/mbabazif/password-locker.git:
+\$ git clone https://github.com/mbabazif/password-locker.git:
+
 To run the application, in your terminal:
-$ python3.6 user_test.py
+
+\$ python3.6 run.py
 
 Technologies Used:
 
