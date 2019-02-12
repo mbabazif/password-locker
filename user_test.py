@@ -70,17 +70,17 @@ class TestCredentials(unittest.TestCase):
 		'''
 		Test to if check the initialization/creation of credential instances is properly done
 		'''
-		self.assertEqual(self.new_credential.user_name,'Mary')
-		self.assertEqual(self.new_credential.site_name,'Facebook')
-		self.assertEqual(self.new_credential.account_name,'maryjoe')
-		self.assertEqual(self.new_credential.password,'pswd100')
+		self.assertEqual(self.new_credential.user_name,'Judith')
+		self.assertEqual(self.new_credential.site_name,'Instagram')
+		self.assertEqual(self.new_credential.account_name,'judi')
+		self.assertEqual(self.new_credential.password,'pswd12345')
 
     def test_save_credentials(self):
 		'''
 		Test to check if the new credential info is saved into the credentials list
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
+		twitter = Credential('Judith','Twitter','judi','pswd12345')
 		twitter.save_credentials()
 		self.assertEqual(len(Credential.credentials_list),2)
 
@@ -96,9 +96,8 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the display_credentials method, displays the correct credentials.
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
+		twitter = Credential('Judith','Twitter','maryjoe','pswd100')
 		twitter.save_credentials()
-		gmail = Credential('Jane','Gmail','maryjoe','pswd200')
 		gmail.save_credentials()
 		self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
 
@@ -107,7 +106,7 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the find_by_site_name method returns the correct credential
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
+		twitter = Credential('Judith','Twitter','judi','pswd12345')
 		twitter.save_credentials()
 		credential_exists = Credential.find_by_site_name('Twitter')
 		self.assertEqual(credential_exists,twitter) 
@@ -117,14 +116,14 @@ class TestCredentials(unittest.TestCase):
 		Test to check if the copy a credential method copies the correct credential
 		'''
 		self.new_credential.save_credentials()
-		twitter = Credential('Jane','Twitter','maryjoe','pswd100')
+		twitter = Credential('judith','Twitter','judi','pswd12345')
 		twitter.save_credentials()
 		find_credential = None
 		for credential in Credential.user_credentials_list:
 				find_credential =Credential.find_by_site_name(credential.site_name)
 				return pyperclip.copy(find_credential.password)
 		Credential.copy_credential(self.new_credential.site_name)
-		self.assertEqual('pswd100',pyperclip.paste())
+		self.assertEqual('pswd12345',pyperclip.paste())
 		print(pyperclip.paste())           
 
 

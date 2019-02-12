@@ -21,7 +21,7 @@ class Credential:
 		Method to define the properties for each user object will hold.
 		'''
 
-		# instance variables
+		
 		self.user_name = user_name
 		self.site_name = site_name
 		self.account_name = account_name
@@ -31,7 +31,7 @@ class Credential:
 		'''
 		Function to save a newly created user instance
 		'''
-		# global users_list
+		
 		Credential.credentials_list.append(self) 
     def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
 		'''
