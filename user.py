@@ -19,7 +19,7 @@ class User:
 		'''
 		User.user_list.append(self) 
 
-     def delete_user(self):
+    def delete_user(self):
 
         '''
         delete_user method deletes a saved contact from the contact_list
@@ -55,6 +55,24 @@ class Credentials:
 		self.user_name = user_name
 		self.account_name = account_name
 		self.password = password
+
+    def save_credentials(self):
+		'''
+		Function to save a newly created user instance
+		'''
+		# global users_list
+		Credential.credentials_list.append(self)
+
+  @classmethod
+	def display_credentials(cls,user_name):
+		'''
+		Class method to display the list of credentials saved
+		'''
+		user_credentials_list = []
+		for credential in cls.credentials_list:
+			if credential.user_name == user_name:
+				user_credentials_list.append(credential)
+		return user_credentials_list
   
 
 	
