@@ -1,5 +1,6 @@
 import unittest # Importing the unittest module
-from user import User # Importing the Account class
+from user import User # Importing the User class
+
 
 class TestUser(unittest.TestCase):
 
