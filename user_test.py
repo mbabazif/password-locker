@@ -1,6 +1,6 @@
 import unittest # Importing the unittest module
 from user import User # Importing the User class
-from credentials import Credentials
+from credentials import Credentials # Importing the Credentials class
 
 
 class TestUser(unittest.TestCase):
@@ -54,8 +54,24 @@ class TestCredentials(unittest.TestCase):
 		for user in User.users_list:
 			if user.first_name == users.first_name and user.password == users.password:
 				current_user = user.first_name
-		return current_user    
+		return current_user
 
+        self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+    
+    def setUp(self):
+		'''
+		Function to create an account's credentials before each test
+		'''
+		self.new_credential = Credential('Mary','Facebook','maryjoe','pswd100')
+
+    def test__init__(self):
+		'''
+		Test to if check the initialization/creation of credential instances is properly done
+		'''
+		self.assertEqual(self.new_credential.user_name,'Mary')
+		self.assertEqual(self.new_credential.site_name,'Facebook')
+		self.assertEqual(self.new_credential.account_name,'maryjoe')
+		self.assertEqual(self.new_credential.password,'pswd100')
 
 
 if __name__ == '__main__':
