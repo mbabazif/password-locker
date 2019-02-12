@@ -13,7 +13,9 @@ As a user I would like:
 ### SetUp / Installation Requirements
 
 python3.6
+
 pip
+
 pyperclip
 
 In your terminal:
