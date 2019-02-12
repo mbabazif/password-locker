@@ -33,7 +33,26 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
-    
+
+class TestCredentials(unittest.TestCase):
+	'''
+	Test class that defines test cases for the credentials class behaviours.
+	Args:
+	    unittest.TestCase: helps in creating test cases
+	'''
+	def test_check_user(self):
+		'''
+		method to test whether the login in function check_user works as expected
+		'''
+        self.new_user = User('Florence','Mbabazi,'pswd12345')
+		self.new_user.save_user()
+		users = User('Bety','Mbabazi','pswd12345')
+		users.save_user()
+
+		for user in User.users_list:
+			if user.first_name == users.first_name and user.password == users.password:
+				current_user = user.first_name
+		return current_user    
 
 
 
