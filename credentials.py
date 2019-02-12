@@ -33,6 +33,7 @@ class Credential:
 		'''
 		
 		Credential.credentials_list.append(self) 
+        
     def generate_password(size=8, char=string.ascii_uppercase+string.ascii_lowercase+string.digits):
 		'''
 		Function to generate an 8 character password for a credential
