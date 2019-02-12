@@ -17,4 +17,6 @@ class User:
 		 test_save_user test case to test if the contact object is saved into
          the user list
 		'''
-		User.users_list.append(self)    
+		User.user_list.append(self) 
+
+class Credentials:
