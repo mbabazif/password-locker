@@ -14,7 +14,7 @@ class User:
         self.password = password
     def save_user(self):
 		'''
-		 test_save_user test case to test if the contact object is saved into
+		 test_save_user test case to test if the user object is saved into
          the user list
 		'''
 		User.user_list.append(self) 
@@ -22,7 +22,7 @@ class User:
     def delete_user(self):
 
         '''
-        delete_user method deletes a saved contact from the contact_list
+        delete_user method deletes a saved user from the user_list
         '''
 
         Contact.user_list.remove(self)
