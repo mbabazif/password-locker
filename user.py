@@ -13,11 +13,11 @@ class User:
         self.last_name = last_name
         self.password = password
     def save_user(self):
-		'''
-		 test_save_user test case to test if the user object is saved into
-         the user list
-		'''
-		User.user_list.append(self) 
+        '''
+        test_save_user test case to test if the user object is saved into
+            the user list
+        '''
+        User.user_list.append(self) 
 
     def delete_user(self):
 
